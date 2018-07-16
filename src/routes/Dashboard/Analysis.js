@@ -1,9 +1,9 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import numeral from 'numeral';
 import { connect } from 'dva';
 import { Row, Col, Tooltip, Icon } from "antd";
 
-import { ChartCard, yuan, Field } from 'components/Charts';
+import { ChartCard, yuan, Field, MiniArea } from 'components/Charts';
 import Trend from 'components/Trend';
 
 import styles from './Analysis.less';
@@ -19,8 +19,16 @@ const Yuan = ({ children }) => (
   chart
 }))
 export default class Analysis extends Component {
+  componentDidMount() {
+    const { dispatch } = this.props;
+    dispatch({
+      type: 'chart/fetch',
+    });
+  }
 
   render() {
+    const { chart } = this.props;
+    const { visitData } = chart;
     const topColResponsiveProps = {
       xs: 24,
       sm: 12,
@@ -50,7 +58,7 @@ export default class Analysis extends Component {
                 <span className={styles.trendText}>12%</span>
               </Trend>
               <Trend flag="down" style={{ marginRight: 16 }}>
-              日环比
+                日环比
                 <span className={styles.trendText}>11%</span>
               </Trend>
             </ChartCard>
@@ -64,10 +72,11 @@ export default class Analysis extends Component {
                   <Icon type="info-circle-o" />
                 </Tooltip>
               }
-              total={() => <Yuan>1111</Yuan>}
+              total={() => <Yuan>8846</Yuan>}
               footer={<Field label="日访问量" value={`￥${numeral(1234).format('0,0')}`} />}
               contentHeight={46}
             >
+              <MiniArea color="#975FE4" data={visitData} />
             </ChartCard>
           </Col>
         </Row>
