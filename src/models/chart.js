@@ -9,7 +9,8 @@ export default {
   },
 
   effects: {
-    *fetch(_, { call, put }) {
+    *fetch({ payload }, { call, put }) {
+      // console.log(payload);
       const response = yield call(fakeChartData);
       // console.log(response);
       yield put({
