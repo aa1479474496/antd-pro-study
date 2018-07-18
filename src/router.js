@@ -4,6 +4,7 @@ import IndexPage from './routes/IndexPage';
 import Products from './routes/Products';
 import List from './routes/List';
 import Analysis from './routes/Dashboard/Analysis';
+import Workplace from './routes/Dashboard/Workplace';
 
 function RouterConfig({ history }) {
   return (
@@ -13,6 +14,7 @@ function RouterConfig({ history }) {
         <Route path="/products" exact component={Products} />
         <Route path="/list" exact component={List} />
         <Route path="/dashboard/analysis" exact component={Analysis} />
+        <Route path="/dashboard/Workplace" exact component={Workplace} />
       </Switch>
     </Router>
   );
