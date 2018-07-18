@@ -83,7 +83,7 @@ export default class Analysis extends Component {
                 周同比
                 <span className={styles.trendText}>12%</span>
               </Trend>
-              <Trend flag="down" style={{ marginRight: 16 }}>
+              <Trend flag="down">
                 日环比
                 <span className={styles.trendText}>11%</span>
               </Trend>
