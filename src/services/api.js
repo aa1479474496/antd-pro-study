@@ -6,3 +6,9 @@ export async function query() {
 export async function fakeChartData() {
   return request('/mock/fake_chart_data');
 }
+export async function queryProjectNotice() {
+  return request('/mock/project/notice');
+}
+export async function queryActivities() {
+  return request('/mock/activities');
+}

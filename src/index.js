@@ -16,6 +16,8 @@ app.use(createLoading());
 app.model(require('./models/products').default);
 app.model(require('./models/list').default);
 app.model(require('./models/chart').default);
+app.model(require('./models/project').default);
+app.model(require('./models/activities').default);
 
 // 4. Router
 app.router(require('./router').default);
