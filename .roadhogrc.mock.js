@@ -11,6 +11,9 @@ const proxy = {
   'GET /mock/fake_chart_data': getFakeChartData,
   'GET /mock/project/notice': getNotice,
   'GET /mock/activities': getActivities,
+  'POST /mock/forms': (req, res) => {
+    res.send({ message: 'Ok' ,code: 200});
+  },
 }
 
 export default (noProxy ? {} : delay(proxy, 1000));

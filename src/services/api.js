@@ -12,3 +12,9 @@ export async function queryProjectNotice() {
 export async function queryActivities() {
   return request('/mock/activities');
 }
+export async function fakeSubmitForm(params) {
+  return request('/mock/forms', {
+    method: 'POST',
+    body: params,
+  });
+}

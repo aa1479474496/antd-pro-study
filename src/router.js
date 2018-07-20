@@ -5,6 +5,7 @@ import Products from './routes/Products';
 import List from './routes/List';
 import Analysis from './routes/Dashboard/Analysis';
 import Workplace from './routes/Dashboard/Workplace';
+import BasicForm from './routes/Forms/BasicForm';
 
 function RouterConfig({ history }) {
   return (
@@ -15,6 +16,7 @@ function RouterConfig({ history }) {
         <Route path="/list" exact component={List} />
         <Route path="/dashboard/analysis" exact component={Analysis} />
         <Route path="/dashboard/Workplace" exact component={Workplace} />
+        <Route path="/forms/basickform" exact component={BasicForm} />
       </Switch>
     </Router>
   );
