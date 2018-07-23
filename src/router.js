@@ -6,6 +6,7 @@ import TestList from './routes/TestList';
 import Analysis from './routes/Dashboard/Analysis';
 import Workplace from './routes/Dashboard/Workplace';
 import BasicForm from './routes/Forms/BasicForm';
+import TableList from './routes/List/TableList';
 
 function RouterConfig({ history }) {
   return (
@@ -17,6 +18,7 @@ function RouterConfig({ history }) {
         <Route path="/dashboard/analysis" exact component={Analysis} />
         <Route path="/dashboard/Workplace" exact component={Workplace} />
         <Route path="/forms/basicform" exact component={BasicForm} />
+        <Route path="/list/tablelist" exact component={TableList} />
       </Switch>
     </Router>
   );
