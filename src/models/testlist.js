@@ -2,7 +2,7 @@ import { query } from '../services/api'
 
 
 export default {
-  namespace: 'list',
+  namespace: 'testlist',
   state: {
     citys: ['上海', '北京', '广州']
   },

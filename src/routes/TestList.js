@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 
-@connect(({ list }) => ({
-  list
+@connect(({ testlist }) => ({
+  testlist
 }))
 export default class List extends Component {
   componentDidMount() {
@@ -13,8 +13,8 @@ export default class List extends Component {
   }
 
   render() {
-    const { list } = this.props;
-    let { citys } = list;
+    const { testlist } = this.props;
+    let { citys } = testlist;
     let item = citys.map((i, index) => {
       return (
         <h3 key={index}>{i}</h3>

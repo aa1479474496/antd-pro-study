@@ -14,7 +14,7 @@ app.use(createLoading());
 // 3. Model
 // app.model(require('./models/example').default);
 app.model(require('./models/products').default);
-app.model(require('./models/list').default);
+app.model(require('./models/testlist').default);
 app.model(require('./models/chart').default);
 app.model(require('./models/project').default);
 app.model(require('./models/activities').default);
