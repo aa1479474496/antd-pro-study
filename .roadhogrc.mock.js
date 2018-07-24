@@ -2,6 +2,7 @@
 import mockjs from 'mockjs';
 import { getFakeChartData } from './mock/chart';
 import { getActivities, getNotice } from './mock/api';
+import { getRule } from './mock/rule';
 
 import { format, delay } from 'roadhog-api-doc';
 // 是否禁用代理
@@ -14,6 +15,7 @@ const proxy = {
   'POST /mock/forms': (req, res) => {
     res.send({ message: 'Ok' ,code: 200});
   },
+  'GET /mock/rule': getRule,
 }
 
 export default (noProxy ? {} : delay(proxy, 1000));

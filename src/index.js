@@ -19,6 +19,7 @@ app.model(require('./models/chart').default);
 app.model(require('./models/project').default);
 app.model(require('./models/activities').default);
 app.model(require('./models/form').default);
+app.model(require('./models/rule').default);
 
 // 4. Router
 app.router(require('./router').default);
