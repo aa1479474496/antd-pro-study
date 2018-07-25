@@ -13,8 +13,9 @@ const { Option } = Select;
 const statusMap = ['default', 'processing', 'success', 'error'];
 const status = ['关闭', '运行中', '已上线', '异常'];
 
-@connect(({ rule }) => ({
-  rule
+@connect(({ rule, loading }) => ({
+  rule,
+  loading: loading.models.rule
 }))
 @Form.create()
 export default class TableList extends PureComponent {
@@ -74,7 +75,8 @@ export default class TableList extends PureComponent {
   }
   render() {
     const { 
-      rule: { data } 
+      rule: { data },
+      loading 
     } = this.props;
 
     const columns = [
@@ -150,6 +152,7 @@ export default class TableList extends PureComponent {
           <StandardTable 
             data={data}
             columns={columns}
+            loading={loading}
           />
         </Card>
       </PageHeaderLayout>

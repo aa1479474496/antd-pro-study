@@ -6,7 +6,8 @@ export default class StandardTable extends PureComponent {
   render() {
     const {
       data: { list, pagination },
-      columns
+      columns,
+      loading
     } = this.props;
 
     return (
@@ -14,6 +15,7 @@ export default class StandardTable extends PureComponent {
         dataSource={list}
         columns={columns}
         pagination={pagination}
+        loading={loading}
       />
     )
   }
