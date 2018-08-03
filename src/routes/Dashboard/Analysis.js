@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
 import numeral from 'numeral';
 import { connect } from 'dva';
+import { Router, Route, Switch, Link } from 'dva/router';
 import { Row, Col, Tooltip, Icon, Card, Tabs } from "antd";
 
 import { ChartCard, yuan, Field, MiniArea } from 'components/Charts';
 import Trend from 'components/Trend';
+
+import childrenRoute from '../childrenRoute';
+import childrenRoute2 from '../childrenRoute2';
+
 
 import styles from './Analysis.less';
 
@@ -44,7 +49,7 @@ export default class Analysis extends Component {
     alert(text)
   }
   show = () => {
-    
+
     let isShow = !this.state.isShow;
     console.log(isShow, this.state.isShow);
     this.setState({
@@ -65,6 +70,18 @@ export default class Analysis extends Component {
     };
     return (
       <div style={{ margin: '24px 24px 0' }}>
+        <div>
+
+         
+          <Link to="/dashboard/analysis/childrenroute">子路由</Link>&nbsp;&nbsp;&nbsp;&nbsp;
+          <Link to="/dashboard/analysis/childrenroute2">子路由2</Link>
+            
+          <Route path="/dashboard/analysis" component={childrenRoute} />
+          
+          <Route path="/dashboard/analysis/childrenroute" component={childrenRoute} exact />
+          <Route path="/dashboard/analysis/childrenroute2" component={childrenRoute2} exact />
+
+        </div>
         <Row gutter={24}>
           <Col {...topColResponsiveProps}>
             <ChartCard
@@ -117,13 +134,13 @@ export default class Analysis extends Component {
                       <h4 onClick={() => this.show()}>销售额趋势</h4>
                       {this.state.isShow && (
                         <div style={{ height: '100px' }}>
-                        <h3>if</h3>
+                          <h3>if</h3>
                           <input type="text" />
                         </div>
                       )}
                       {(
                         <div className={this.state.isShow ? '' : styles.hide} style={{ height: '100px' }}>
-                        <h3>hide</h3>
+                          <h3>hide</h3>
                           <input type="text" />
                         </div>
                       )}
@@ -144,10 +161,12 @@ export default class Analysis extends Component {
                       </ul>
                     </div>
                   </Col>
+
                 </Row>
               </TabPane>
               <TabPane tab="访问量" key="views">Content of Tab Pane 2</TabPane>
             </Tabs>
+
           </div>
         </Card>
 
